@@ -1,0 +1,19 @@
+title: Hello from RapidTiddler
+
+This is a demo of RapidTiddler. Features:
+
+* Edit from view mode
+* Uses CodeMirror for auto-complete
+** Tags start with `#`
+** Links with `[[Tiddler]]` syntax
+** Additional links with @Tiddler syntax (not working yet)
+* Shows transcluded inline widgets for
+** Navigation to links ($:/plugins/menedev/rapidtiddler/widget/link)
+** Custom widgets for actions ($:/plugins/menedev/rapidtiddler/action/<action name>)
+
+The navigation link is defined in $:/plugins/menedev/rapidtiddler/widget/link. In there you could also use `<<target>>` to get the name of the target Tiddler.
+
+Actions can be defined by adding a new Tiddler named
+`$:/plugins/menedev/rapidtiddler/action/<action name>`
+
+For example $:/plugins/menedev/rapidtiddler/action/todo gets transcluded to the edited Tiddler when you type `/todo`.

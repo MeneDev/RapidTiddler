@@ -232,11 +232,15 @@
             return $tw.wiki.makeWidget(parseTreeDiv,options);
         };
 
-        function linkFor(string, tiddler) {
+        function linkFor(tiddler) {
             var a = document.createElement("a");
             a.setAttribute("href", "#" + tiddler);
 
-            var widget = makeTranscludeWidget("$:/core/images/link", {mode: "inline", variables: {currentTiddler: cm.options.tiddler}, document: document});
+            // var text = document.createTextNode("->");
+            // a.appendChild(text);
+
+            // var span = document.createElement("span");
+            var widget = makeTranscludeWidget("$:/plugins/menedev/rapidtiddler/widget/link", {mode: "inline", variables: {target: tiddler, currentTiddler: cm.options.tiddler}, document: document});
             widget.render(a, null);
 
             return a;
@@ -268,7 +272,7 @@
                         {inclusiveLeft: false, inclusiveRight: false, clearOnEnter: false});
                     var bookmark = cm.doc.setBookmark({line: line, ch: t.start},
                         {
-                            widget: linkFor(t.string, t.string.slice(2, -2)),
+                            widget: linkFor(t.string.slice(2, -2)),
                             insertLeft: true
                         }
                     );
