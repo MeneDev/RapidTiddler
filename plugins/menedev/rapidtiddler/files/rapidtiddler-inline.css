@@ -1,0 +1,26 @@
+.rapidtiddler-inline-editor {
+    width: 100%;
+    display: inline-block;
+}
+
+.rapidtiddler-inline-editor > * {
+    width: 100%;
+    display: inline-block;
+}
+
+.rapidtiddler-inline-editor > * > * {
+    width: 100%;
+    display: inline-block;
+}
+
+.rapidtiddler-inline-editor ~ :not(.tc-tiddler-title) {
+    visibility: collapse;
+    display: none;
+    height: 0;
+}
+
+.rapidtiddler-inline-editor ~ .tc-tiddler-title > .tc-titlebar > :not(.tc-tiddler-controls) {
+    visibility: collapse;
+    display: none;
+    height: 0;
+}

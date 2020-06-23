@@ -83,7 +83,7 @@ function getCmConfig() {
 }
 
 function CodeMirrorEngine(options) {
-
+console.log(options);
 	// Save our options
 	var self = this;
 	options = options || {};
@@ -103,9 +103,13 @@ function CodeMirrorEngine(options) {
 	// Set all cm-plugin defaults
 	// Get the configuration options for the CodeMirror object
 	var config = getCmConfig();
-
+	// allow the widget to override config
+	config = $tw.utils.extend(config,options.widget.attributes);
 	config.mode = options.type;
 	config.value = options.value;
+	if(config["lineNumbers"] === "false") {
+		config["lineNumbers"] = false;
+	}
 	if(this.widget.editTabIndex) {
 		config["tabindex"] = this.widget.editTabIndex;
 	}

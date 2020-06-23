@@ -1,0 +1,19 @@
+{
+	"tiddlers": [
+		{
+			"file": "mode/rapidtiddler/rapidtiddler.css",
+			"fields": {
+				"type": "text/css",
+				"title": "$:/plugins/rapidtiddler/codemirror/mode/rapidtiddler/rapidtiddler.css",
+				"tags": "[[$:/tags/Stylesheet]]"
+			}
+		},{
+			"file": "mode/rapidtiddler/rapidtiddler.js",
+			"fields": {
+				"type": "application/javascript",
+				"title": "$:/plugins/rapidtiddler/codemirror/mode/rapidtiddler/rapidtiddler.js",
+				"module-type": "codemirror"
+			}
+		}
+	]
+}

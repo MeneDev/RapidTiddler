@@ -1,0 +1,20 @@
+{
+	"tiddlers": [
+		{
+			"file": "rapidtiddlerParser.js",
+			"fields": {
+				"type": "application/javascript",
+				"title": "$:/plugins/menedev/rapidtiddler/files/rapidtiddlerParser.js",
+				"module-type": "library"
+			}
+		},
+		{
+			"file": "rapidtiddler-inline.css",
+			"fields": {
+				"type": "text/css",
+				"title": "$:/plugins/menedev/rapidtiddler/files/rapidtiddler-inline.css",
+				"tags": "[[$:/tags/Stylesheet]]"
+			}
+		}
+	]
+}

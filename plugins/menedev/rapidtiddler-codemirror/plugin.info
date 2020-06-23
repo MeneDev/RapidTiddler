@@ -1,0 +1,7 @@
+{
+	"title": "$:/plugins/menedev/rapidtiddler-codemirror",
+	"name": "CodeMirror Mode RapidTiddler",
+	"description": "RapidTiddler highlighting mode for CodeMirror",
+	"parent-plugin": "$:/plugins/tiddlywiki/codemirror",
+	"list": "readme"
+}

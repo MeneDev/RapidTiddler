@@ -1,0 +1,13 @@
+span.cm-at {
+  text-decoration: underline;
+  color: cadetblue;
+}
+
+span.cm-rapid-tag {
+  text-decoration: underline;
+  color: cadetblue !important;
+}
+span.cm-rapid-link {
+  text-decoration: underline;
+  color: cadetblue !important;
+}

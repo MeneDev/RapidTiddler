@@ -1,6 +1,9 @@
 {
 	"description": "Demo of the CodeMirror plugin",
 	"plugins": [
+		"menedev/rapidtiddler",
+		"menedev/rapidtiddler-codemirror",
+
 		"tiddlywiki/codemirror",
 		"tiddlywiki/codemirror-closebrackets",
 		"tiddlywiki/codemirror-closetag",
@@ -11,8 +14,7 @@
 		"tiddlywiki/codemirror-mode-javascript",
 		"tiddlywiki/codemirror-mode-css",
 		"tiddlywiki/codemirror-mode-x-tiddlywiki",
-		"tiddlywiki/codemirror-mode-markdown",
-		"tiddlywiki/codemirror-keymap-sublime-text"
+		"tiddlywiki/codemirror-mode-markdown"
 	],
 	"themes": [
 		"tiddlywiki/vanilla",

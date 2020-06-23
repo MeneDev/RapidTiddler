@@ -1,0 +1,4 @@
+title: $:/plugins/menedev/rapidtiddler-codemirror/readme
+
+This plugin adds Syntax Highlighting for ~TiddlyWiki Classic tiddlers (text/x-rapidtiddler) to the [[CodeMirror|http://codemirror.net]] text editor. It needs the latest [[CodeMirror plugin|$:/plugins/tiddlywiki/codemirror]] to be installed
+

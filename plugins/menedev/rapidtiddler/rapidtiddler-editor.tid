@@ -1,0 +1,9 @@
+title: $:/plugins/menedev/rapidtiddler/rapidtiddler-editor
+tags: $:/tags/ViewTemplate
+
+<$list filter="[is[current]field:type[text/x-rapidtiddler]]">
+@@.rapidtiddler-inline-editor
+<$edit-codemirror type="text/x-rapidtiddler" lineNumbers="false" tiddler=<<currentTiddler>> />
+<input type="text"> Hi
+@@
+</$list>
