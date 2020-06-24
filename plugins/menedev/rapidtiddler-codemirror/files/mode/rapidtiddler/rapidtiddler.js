@@ -240,9 +240,13 @@
             // a.appendChild(text);
 
             // var span = document.createElement("span");
-            var widget = makeTranscludeWidget("$:/plugins/menedev/rapidtiddler/widget/link", {mode: "inline", variables: {target: tiddler, currentTiddler: cm.options.tiddler}, document: document});
-            widget.render(a, null);
+            var widget = makeTranscludeWidget("$:/plugins/menedev/rapidtiddler/widget/link", {
+                mode: "inline", variables: {target: tiddler, currentTiddler: cm.options.tiddler}, document: document});
+            cm.options.widget.children.push(widget);
+            widget.parentWidget = cm.options.widget
 
+            widget.render(a, null);
+            widget.invokeActions(cm.options.widget, null);
             return a;
         }
         
@@ -321,5 +325,15 @@
                 decorateLine(cm, i);
             }
         });
+
+        cm.on("keydown", function(cm, e) {
+            console.log("keydown");
+            console.log(arguments);
+            //e.preventDefault();
+
+            if (e.code == "Space" && e.ctrlKey && !e.altKey) return;
+            e.codemirrorIgnore = true;
+        });
+
     });
   });

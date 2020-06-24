@@ -1,0 +1,249 @@
+created: 20170922203553093
+modified: 20170927050808722
+title: $:/plugins/sq/streams/styles
+tags: [[$:/tags/Stylesheet]]
+
+.stream-root {
+	margin-left: -1em;
+}
+
+.stream-row {
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.stream-row-children {
+	display:flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	padding-left: 0.5em;
+	border-left: 1px solid <<color message-border>>;
+	margin-left: 29px;
+}
+
+.stream-row-children.stream-row-children-empty {
+	border-left: none;
+}
+
+.stream-node-disabled,
+.stream-droppable.tc-droppable.stream-node-disabled + div{
+	background-color: <<color tiddler-editor-border>>;
+}
+
+.stream-row-selected,
+.stream-droppable.tc-droppable.stream-row-selected + div {
+	background: <<color notification-background>>;
+	color: <<color message-foreground>>;
+}
+
+.stream-droppable.tc-droppable.stream-node-disabled + div + .stream-droppable.tc-droppable.tc-dragover > .tc-droppable-placeholder {
+	display: none;
+}
+
+.stream-droppable.tc-droppable.stream-node-disabled + div + .stream-droppable.tc-droppable.tc-dragover {
+	cursor: not-allowed;
+}
+
+.stream-droppable.tc-droppable.tc-dragover > .tc-droppable-placeholder {
+	margin-left: 29px;
+	line-height: 5px;
+	height: 5px;
+	border: 2px solid <<color dropzone-background>>;
+	background-color: <<color dropzone-background>>;
+}
+
+.stream-droppable-spacer {
+	height: 0.3em;
+}
+
+.stream-node-control {
+	display: flex;
+    flex: 0 0 45px;
+    padding-top: 4px;
+    padding-left: 4px;
+}
+
+.stream-node-control .stream-node-collapser,
+.stream-node-control .stream-node-handle-wrapper {
+    display: flex;
+    height: 13px;
+    width: 13px;
+    margin-top: 4px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.stream-node-control.stream-node-control-addnew .stream-node-handle-wrapper {
+	width: 20px;
+	height: 20px;
+	margin-top: 0;
+}
+
+.stream-node-control.stream-node-control-addnew .stream-node-collapser {
+	width: 16px;
+}
+
+.stream-node-control.stream-node-control-addnew div.tc-btn-invisible svg {
+	opacity: 0.8;
+}
+
+
+.stream-node-control.stream-node-control-addnew div.tc-btn-invisible svg circle {
+	fill: <<color tiddler-controls-foreground>>;
+	opacity: 0.6;
+}
+
+.stream-node-control.stream-node-control-addnew div.tc-btn-invisible svg line.line {
+	stroke: <<color foreground>>;
+	opacity: 1;
+}
+
+.stream-node-control.stream-node-control-addnew div.tc-btn-invisible:hover svg circle {
+	fill: <<color tiddler-controls-foreground-hover>>;
+}
+
+.stream-node-control .stream-node-collapser {
+	height: 13px;
+	width: 20px;
+	opacity:0;
+}
+
+.stream-row-nochildren .stream-node-collapser {
+	visibility: hidden;
+}
+
+.stream-row:hover .stream-node-collapser,
+.stream-row-children-collapsed.stream-row:hover .stream-node-collapser {
+	opacity: 0.4;
+}
+
+.stream-row:hover .stream-node-collapser:hover,
+.stream-row-children-collapsed.stream-row:hover .stream-node-collapser:hover {
+	opacity: 0.9;
+}
+
+.stream-row-children-collapsed .stream-node-control .stream-node-collapser {
+	opacity: 0.4;
+}
+
+.stream-node-collapser button.tc-btn-invisible,
+.stream-node-collapser button.tc-btn-invisible:focus {
+	outline: none;
+}
+
+.stream-node-collapser svg {
+	transform: rotateZ(90deg);
+	transition: transform 200ms ease-in-out 0s;
+}
+
+.stream-row-children-collapsed .stream-node-collapser svg {
+	transform: rotateZ(0deg);
+}
+
+.stream-node-control .stream-node-handle-wrapper .stream-node-handle {
+	width: 9px;
+	height: 9px;
+	display: flex;
+	align-items : center;
+}
+
+.stream-node-control .stream-node-handle-wrapper .stream-node-handle-inner {
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: <<color foreground>>;
+	opacity: 0.3;
+}
+
+/*
+.stream-row:hover .stream-node-control .stream-node-handle-wrapper .stream-node-handle-inner {
+	opacity: 0.7;
+}
+*/
+
+.stream-row:hover .stream-node-control .stream-node-handle-wrapper:hover .stream-node-handle-inner {
+	opacity: 1;
+} 
+
+.stream-node-control.sq-contextmenu-active .stream-node-handle-wrapper .stream-node-handle-inner {
+	border: 5px solid #5778d8; /*b74e4e*/
+	opacity: 1;
+}
+
+
+.stream-node-block {
+    overflow-wrap: break-word;
+	max-width: 550px;
+    min-height: calc(1.5em + 8px);
+    box-sizing: border-box;
+    margin-top: -1px;
+    min-width: 100px;
+    width: 100%;
+    line-height: 1.5em;
+    cursor: text;
+    padding-top: 4px;
+    padding-bottom: 4px;
+	/*white-space: pre-wrap;*/
+}
+
+.stream-node-block textarea {
+	width: 100%;
+	outline-color: <<color tiddler-editor-border>>;
+	border: 1px solid <<color tiddler-editor-border>>;
+
+	resize: none;
+}
+
+.stream-node-block textarea.streams-editor {
+	line-height:1.5em;
+	margin-bottom: 0.6em;
+}
+
+.stream-node-block p:first-child {
+	margin-top:0;
+}
+
+.stream-node-block p:last-child {
+	margin-bottom:0;
+}
+
+span.sq-breadcrumbs-fragment {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: 500px;
+}
+
+span.sq-breadcrumbs-fragment a.tc-tiddlylink {
+	color: <<color foreground>>;
+}
+
+/*** framed engine styles ***/
+
+.tc-tiddler-frame .stream-node-block input.tc-edit-texteditor,
+.tc-tiddler-frame .stream-node-block textarea.tc-edit-texteditor,
+.tc-tiddler-frame .stream-node-block iframe.tc-edit-texteditor {
+	background: <<color background>> !important;
+	margin-top:0;
+	margin-bottom: -1.6em;
+}
+
+<$reveal state="$:/config/sq/streams/enable-edit-toolbar" type="nomatch" text="yes">
+.stream-node-block .tc-editor-toolbar {
+	display: none;
+}
+</$reveal>
+
+<$reveal state="$:/state/sq/streams/global-drag-state" type="match" text="yes">
+
+/** active drag css **/
+
+</$reveal>
+
+<$reveal state="$:/state/sq/streams/global-drag-state" type="nomatch" text="yes">
+
+/**no active drag css **/
+
+</$reveal>

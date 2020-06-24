@@ -1,6 +1,7 @@
 {
 	"description": "Demo of the RapidTiddler plugin",
 	"plugins": [
+		"streams",
 		"menedev/rapidtiddler",
 		"menedev/rapidtiddler-codemirror",
 

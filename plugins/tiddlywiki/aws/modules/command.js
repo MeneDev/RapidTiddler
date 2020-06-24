@@ -108,7 +108,7 @@ Command.prototype.subCommands["s3-rendertiddler"] = function() {
 	}
 	// Render the tiddler
 	var text = this.commander.wiki.renderTiddler(type,title,{variables: variables}),
-		type = "text/plain",
+		type = "",
 		encoding = ($tw.config.contentTypeInfo[type] || {encoding: "utf8"}).encoding;
 	// Zip it if needed
 	if(zipfilename) {
