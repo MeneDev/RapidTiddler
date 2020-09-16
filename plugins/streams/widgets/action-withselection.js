@@ -81,11 +81,23 @@ WithSelectionWidget.prototype.invokeAction = function(triggeringWidget,event) {
 	} else {
 		selection = window.getSelection();
 	}
-	var el = selection.focusNode.children[0];
-	if(selection && el) {
-		this.setVariable("selectionStart",el.selectionStart.toString());
-		this.setVariable("selectionEnd",el.selectionEnd.toString());
+	if (window.initializedRapidtiddlerEditors.has(event.srcElement)) {
+		var cm = window.initializedRapidtiddlerEditors.get(event.srcElement);
+		var index = cm.doc.indexFromPos(cm.getCursor());
+		var selectionStart = index;
+		var selectionEnd = index;
+		selection = "";
+		this.setVariable("selectionStart",selectionStart.toString());
+		this.setVariable("selectionEnd",selectionEnd.toString());
 		this.setVariable("selection",selection.toString());
+	} else {
+		var el = selection.focusNode.children[0];
+		console.log("action-withselection");
+		if(selection && el) {
+			this.setVariable("selectionStart",el.selectionStart.toString());
+			this.setVariable("selectionEnd",el.selectionEnd.toString());
+			this.setVariable("selection",selection.toString());
+		}	
 	}
 	this.invokeActionString(this.actions,this,event);
 	return true;

@@ -314,10 +314,15 @@
 
         cm.on("change", handleUpdate);
         // cm.on("cursorActivity", handleUpdate);
-        var initialized = false;
+        
         cm.on("update", function(cm) {
-            if (initialized) return;
-            initialized = true;
+            if (!window.initializedRapidtiddlerEditors) {
+                window.initializedRapidtiddlerEditors = new WeakMap();
+            } 
+
+            var el = cm.getWrapperElement().parentElement.parentElement;
+            if (window.initializedRapidtiddlerEditors.has(el)) return;
+            window.initializedRapidtiddlerEditors.set(el, cm);
 
             console.log(arguments);
             var lineCount = cm.doc.lineCount();
@@ -329,11 +334,38 @@
         cm.on("keydown", function(cm, e) {
             console.log("keydown");
             console.log(arguments);
+            console.log(cm.state.completionActive
+                );
             //e.preventDefault();
+            e.codemirror = cm;
 
             if (e.code == "Space" && e.ctrlKey && !e.altKey) return;
+            if (e.code == "Backspace" && cm.doc.getValue().length > 0) return;
+            if (e.code == "ArrowRight") return;
+            if (e.code == "ArrowLeft") return;
+            if (e.code == "ArrowUp" && !e.ctrlKey && !e.altKey && cm.state.completionActive) return;
+            if (e.code == "ArrowDown" && !e.ctrlKey && !e.altKey && cm.state.completionActive) return;
+            if (e.code == "Enter" && !e.ctrlKey && !e.altKey && cm.state.completionActive) return;
+            if (e.code == "Enter" && !e.ctrlKey && !e.altKey && e.shiftKey) return;
+            if (e.code == "Enter" && !e.ctrlKey && e.altKey && !e.shiftKey) return;
+            console.log("codemirrorIgnore");
             e.codemirrorIgnore = true;
+            //e.preventDefault();
         });
+
+        cm.on("keyup", function(cm, e) {
+            if (cm.state.completionActive) return;
+            cm.showHint();
+        });
+
+        cm.on("cursorActivity", function(cm) {
+            var index = cm.doc.indexFromPos(cm.getCursor());
+            var textarea = cm.getWrapperElement().querySelector("textarea");
+            textarea.value = cm.doc.getValue();
+            textarea.selectionStart = index;
+            textarea.selectionEnd = index;    
+        });
+
 
     });
   });
